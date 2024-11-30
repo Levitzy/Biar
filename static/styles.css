@@ -1,0 +1,50 @@
+body {
+    @apply bg-gray-100 flex flex-col items-center justify-center h-screen;
+}
+
+.container {
+    @apply bg-white rounded-lg shadow-md p-6 max-w-lg text-center;
+}
+
+.container h2 {
+    @apply text-2xl font-semibold text-gray-800 mb-4;
+}
+
+.container p {
+    @apply text-gray-600 mb-6;
+}
+
+.dropdown {
+    @apply mb-4;
+}
+
+.dropdown-select {
+    @apply w-full p-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:border-blue-300;
+}
+
+.decrypt-section,
+.file-section {
+    @apply mb-4;
+}
+
+.material-text-input input,
+.file-input {
+    @apply w-full p-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:border-blue-300 mb-4;
+}
+
+.decrypt-button,
+.copy-payload-button {
+    @apply bg-blue-600 text-white p-2 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-300;
+}
+
+.result-container {
+    @apply bg-white rounded-lg shadow-md p-6 max-w-lg mt-6 w-full text-left;
+}
+
+.result-container h3 {
+    @apply text-xl font-semibold text-gray-800 mb-4 text-center;
+}
+
+.result {
+    @apply text-gray-700 bg-gray-100 p-4 rounded-lg border overflow-auto;
+}

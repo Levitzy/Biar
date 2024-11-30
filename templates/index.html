@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Design Container</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script type="importmap">
+      {
+          "imports": {
+            "@material/web/": "https://esm.run/@material/web/"
+          }
+      }
+    </script>
+    <script type="module">
+      import '@material/web/all.js';
+      import {styles as typescaleStyles} from '@material/web/typography/md-typescale-styles.js';
+    </script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center h-screen">
+    <div class="container bg-white rounded-lg shadow-md p-6 max-w-lg text-center">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Rounded Material Container</h2>
+        <p class="text-gray-600 mb-6">This is a simple example of a rounded Material Design container.</p>
+        <div class="dropdown mb-4">
+            <select id="options" class="w-full p-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:border-blue-300">
+                <option value="">Select an option</option>
+                <option value="armod-vpn">Armod VPN</option>
+                <option value="netmod-syna">Netmod Syna</option>
+                <option value="sockshttp">SocksHTTP</option>
+                <option value="opentunnel">OpenTunnel</option>
+                <!-- Add more options here if needed -->
+            </select>
+        </div>
+        <div id="decrypt-section" class="hidden mb-4">
+            <div class="material-text-input mb-4">
+                <input type="text" id="encrypted-content" placeholder="Enter encrypted content" class="w-full p-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:border-blue-300" />
+            </div>
+            <button id="decrypt-button" class="bg-blue-600 text-white p-2 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-300">Decrypt</button>
+        </div>
+        <div id="file-section" class="hidden mb-4">
+            <input type="file" id="file-input" class="w-full p-2 border rounded-lg shadow-sm focus:outline-none focus:ring focus:border-blue-300" />
+        </div>
+    </div>
+    <div id="result-container" class="result-container hidden bg-white rounded-lg shadow-md p-6 max-w-lg mt-6 w-full text-left">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4 text-center">Decrypted Result</h3>
+        <pre id="result" class="result text-gray-700 bg-gray-100 p-4 rounded-lg border overflow-auto"></pre>
+        <button id="copy-payload-button" class="bg-blue-600 text-white p-2 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring focus:border-blue-300 hidden mt-4">Copy Payload</button>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
