@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, render_template
 from armod_decryptor import process_config
 from netmod_decryptor import decrypt_file
 from sockshttp_decryptor import file_sockshttp
-from opentunnel_decryptor import tnl_decryptor
+#from opentunnel_decryptor import tnl_decryptor
 
 app = Flask(__name__)
 
@@ -46,7 +46,7 @@ def decrypt_sockshttp_file_route():
     except Exception as e:
         return jsonify({'result': f'Error: {str(e)}'}), 500
     
-@app.route('/file_opentunnel', methods=['POST'])
+'''@app.route('/file_opentunnel', methods=['POST'])
 def decrypt_sockshttp():
     data = request.get_json()
     file_content = data.get('fileContent')
@@ -56,7 +56,7 @@ def decrypt_sockshttp():
         result = tnl_decryptor(file_content)
         return jsonify({'result': result}), 200
     except Exception as e:
-        return jsonify({'result': f'Error: {str(e)}'}), 500
+        return jsonify({'result': f'Error: {str(e)}'}), 500'''
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
